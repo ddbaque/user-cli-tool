@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import curses
-
 import os
 import subprocess
 
@@ -130,9 +129,9 @@ class MenuDisplay:
         while 1:
             key = self.stdscr.getch()
 
-            if key == curses.KEY_RIGHT and current_option == "yes":
+            if (key == curses.KEY_RIGHT or key == ord("l")) and current_option == "yes":
                 current_option = "no"
-            elif key == curses.KEY_LEFT and current_option == "no":
+            elif (key == curses.KEY_LEFT or key == ord("h")) and current_option == "no":
                 current_option = "yes"
             elif key == curses.KEY_ENTER or key in [10, 13]:
                 return True if current_option == "yes" else False
