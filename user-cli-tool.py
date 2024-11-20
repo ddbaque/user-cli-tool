@@ -49,7 +49,7 @@ class MenuDisplay:
                 if current_row == 0:
                     self.handle_create_user()
                     # if user selected last row (Exit), confirm before exit the program
-                elif current_row == 2:
+                elif current_row == 1:
                     self.handle_delete_user()
                 elif current_row == len(self.menu) - 1:
                     if self.confirm("Are you sure you want to exit?"):
@@ -298,5 +298,5 @@ class MenuDisplay:
 
 
 if __name__ == "__main__":
-    menu = ["Create User", "Create Group", "Delete User", "Exit"]
+    menu = ["Create User", "Delete User", "Exit"]
     MenuDisplay(menu)
